@@ -1,13 +1,31 @@
-# @fanpaisk/dsh-pushplus-notify
+# DSH 微信提醒
 
-DSH 微信提醒：任务完成、出错、中断、阻塞、权限请求、`ask_user_question` 需要选择时，
-通过 PushPlus 推送到微信。
+> DSH 任务完成、出错、需要你选择时，通过 PushPlus 推送到微信。
 
-这是一个标准 DSH **Bundle 插件**，可以：
+[![npm](https://img.shields.io/npm/v/@fanpaisk/dsh-pushplus-notify)](https://www.npmjs.com/package/@fanpaisk/dsh-pushplus-notify)
+[![CI](https://github.com/fanpaisk/dsh-pushplus-notify/actions/workflows/ci.yml/badge.svg)](https://github.com/fanpaisk/dsh-pushplus-notify/actions/workflows/ci.yml)
+[![license](https://img.shields.io/github/license/fanpaisk/dsh-pushplus-notify)](LICENSE)
 
-- 从 npm 安装；
-- 从 GitHub 仓库安装；
-- 作为市场 index 的一个 bundle 提供给 Discover。
+包名：`@fanpaisk/dsh-pushplus-notify` · 标准 DSH **Bundle 插件** · 支持桌面版 / Web / Headless
+
+## 30 秒开始
+
+**桌面版**：插件 → 添加插件 → 输入 `@fanpaisk/dsh-pushplus-notify` → 安装并打开开关。
+
+**Web 版**：
+
+```powershell
+dsh plugin --profile web add @fanpaisk/dsh-pushplus-notify
+```
+
+**配置微信提醒**：
+
+```powershell
+npx @fanpaisk/dsh-pushplus-notify setup
+```
+
+> 没有 PushPlus Token？打开 https://www.pushplus.plus/ ，微信扫码登录后复制。
+> Token 是每个用户自己的，不要发给别人。
 
 ## 功能
 
