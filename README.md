@@ -28,28 +28,63 @@ DSH 微信提醒：任务完成、出错、中断、阻塞、权限请求、`ask
 
 ## 安装
 
-### 从 npm
+### 桌面版（Desktop）
+
+桌面版使用独立的 `desktop` profile，由桌面 App 管理，**不能**用
+`dsh plugin --profile desktop ...` 安装。
+
+1. 打开 **插件 / Plugins** 页
+2. 点 **添加插件**
+3. 输入：
+
+```text
+@fanpaisk/dsh-pushplus-notify
+```
+
+4. 安装源选 **npm 官方源**
+5. 安装完成后，把插件开关打开
+
+也可以用 GitHub 地址安装：
+
+```text
+https://github.com/fanpaisk/dsh-pushplus-notify
+```
+
+> 注意：在终端运行 `dsh plugin --profile web add ...` 只会安装到 `web` profile，
+> 不会影响桌面版。桌面版读的是 `desktop` profile。
+
+安装后 DSH 每次启动会自动加载，不需要 watchdog。
+
+### Web 版
+
+在终端安装到 `web` profile，然后启动 Web：
 
 ```powershell
 dsh plugin --profile web add @fanpaisk/dsh-pushplus-notify
-dsh plugin --profile headless add @fanpaisk/dsh-pushplus-notify
+dsh web
 ```
 
-桌面版的 `desktop` profile 由桌面 App 管理，请在桌面版 **插件 / Plugins** 页安装。
-安装后 DSH 每次启动会自动加载，不需要 watchdog。
-
-### 从 GitHub
+GitHub 方式：
 
 ```powershell
 dsh plugin --profile web add github:fanpaisk/dsh-pushplus-notify
+```
+
+### Headless（可选）
+
+```powershell
+dsh plugin --profile headless add @fanpaisk/dsh-pushplus-notify
 ```
 
 ### 本地 tarball
 
 ```powershell
 npm run pack
-dsh plugin --profile web add file:C:\path\to\fanpaisk-dsh-pushplus-notify-1.0.1.tgz
+dsh plugin --profile web add file:C:\path\to\fanpaisk-dsh-pushplus-notify-1.0.2.tgz
 ```
+
+> `web`、`desktop`、`headless` 是三个独立 profile。装到哪个 profile，
+> 只有那个入口会生效。桌面版请在桌面 App 的插件页安装。
 
 ## 首次配置
 
