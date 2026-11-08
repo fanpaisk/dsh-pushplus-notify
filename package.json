@@ -1,6 +1,6 @@
 {
   "name": "@fanpaisk/dsh-pushplus-notify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DSH 微信提醒：任务完成 / 出错 / 中断 / 阻塞 / 权限请求 / 需要选择时，通过 PushPlus 推送到微信。",
   "type": "module",
   "main": "lib/index.js",

@@ -53,6 +53,15 @@ dsh plugin --profile web add file:C:\path\to\fanpaisk-dsh-pushplus-notify-1.0.1.
 
 ## 首次配置
 
+### 先获取 PushPlus Token
+
+1. 打开 https://www.pushplus.plus/
+2. 用微信扫码登录
+3. 在首页复制你的 token
+4. 运行下面的 `setup`，把 token 粘贴进去
+
+> PushPlus 是一个微信推送服务，token 是每个用户自己的，不能共用，也不要发给别人。
+
 ```powershell
 npx @fanpaisk/dsh-pushplus-notify setup
 ```

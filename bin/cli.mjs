@@ -109,9 +109,17 @@ async function sendTest(token, settings) {
 async function setup() {
   const settings = normalizeSettings(readSettingsFile());
   const existing = currentToken(settings);
-  const file = settingsFilePath();
 
-  console.log(`配置文件: ${file}`);
+  console.log(`
+DSH PushPlus 微信提醒
+
+没有 PushPlus Token？按下面步骤获取：
+  1. 打开 https://www.pushplus.plus/
+  2. 用微信扫码登录
+  3. 在首页复制你的 token
+  4. 把 token 粘贴到下面
+`);
+  console.log(`配置文件: ${settingsFilePath()}`);
   console.log(`当前 token: ${existing ? maskToken(existing) : '(未配置)'}`);
   const tokenArg = option('--token');
   const token = tokenArg || await askHidden('PushPlus Token（回车保留当前值）: ') || existing;
@@ -124,6 +132,7 @@ async function setup() {
   settings.token = token;
   const saved = writeSettingsFile(settings);
   console.log(`✓ 已保存: ${saved}`);
+  console.log('提示: 之后 DSH 每次启动都会自动加载这个插件，不需要单独开机自启。');
 
   if (!has('--no-test')) {
     const answer = (await ask('现在发送一条测试消息？(Y/n): ')) || 'y';
@@ -168,6 +177,7 @@ function help() {
   npx @fanpaisk/dsh-pushplus-notify test  [--token <token>]
   npx @fanpaisk/dsh-pushplus-notify status
 
+获取 PushPlus Token: https://www.pushplus.plus/ （微信扫码登录后复制）
 设置文件: ${settingsFilePath()}`);
 }
 

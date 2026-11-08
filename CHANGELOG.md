@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+- Setup now explains how to get a PushPlus token (https://www.pushplus.plus/).
+- README adds token onboarding steps.
+- Missing-token log points at the setup command and token URL.
+
 ## 1.0.1
 
 - Standard DSH bundle layout (`dsh.bundle.patch`).
