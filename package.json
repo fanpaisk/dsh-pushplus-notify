@@ -1,0 +1,55 @@
+{
+  "name": "@fanpaisk/dsh-pushplus-notify",
+  "version": "1.0.1",
+  "description": "DSH 微信提醒：任务完成 / 出错 / 中断 / 阻塞 / 权限请求 / 需要选择时，通过 PushPlus 推送到微信。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-pushplus-notify": "./bin/cli.mjs"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node test/plugin.test.mjs",
+    "pack": "npm pack --pack-destination dist",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "pushplus",
+    "wechat",
+    "notification"
+  ],
+  "author": "fanpaisk",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanpaisk/dsh-pushplus-notify.git"
+  },
+  "homepage": "https://github.com/fanpaisk/dsh-pushplus-notify#readme",
+  "bugs": {
+    "url": "https://github.com/fanpaisk/dsh-pushplus-notify/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

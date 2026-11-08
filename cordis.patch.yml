@@ -1,0 +1,7 @@
+# DSH PushPlus Notify bundle.
+# The plugin resolves its user settings from $DSH_HOME/pushplus-notify.json,
+# so this patch stays free of tokens and per-machine values.
+- insert:
+    - id: pushplus-notify
+      name: "@fanpaisk/dsh-pushplus-notify"
+      config: {}

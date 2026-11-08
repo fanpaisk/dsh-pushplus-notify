@@ -1,0 +1,8 @@
+{
+  "wechat_notify": {
+    "enabled": true,
+    "token": "your-pushplus-token",
+    "cooldown_seconds": 0,
+    "notify_on_complete": true
+  }
+}

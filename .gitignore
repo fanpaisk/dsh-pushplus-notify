@@ -1,0 +1,7 @@
+notify.log
+*.log
+dist/
+node_modules/
+*.tgz
+.npmrc
+config.json
